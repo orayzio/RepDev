@@ -3,6 +3,7 @@ SYSACTUALDATE|Actual calendar date|DATE|
 SYSACTUALTIME|Actual clock time on the server|NUMBER|
 SYSCLIENTNUMBER|Client Number of the Credit Union|NUMBER|
 SYSCONSOLENUM|Console number of user running this repgen|NUMBER|
+SYSHOSTNAME|Host name of the server|CHARACTER|
 SYSSYMDIRECTORY|SYM Number|NUMBER|
 SYSTEMDATE|Current banking date|DATE|
 SYSMEMOMODE|Memo Mode|NUMBER|
@@ -143,7 +144,7 @@ LIVEINSTCHECK|Returns 1 if the specfile is running in a live SYM institution|NUM
 @ACSSERVICEMATCH3|These variables are true/false flags that return 1 for each entry of the ACS Services Parameters Service Match # field criteria that is determined to be true and 0 for unused or non-matching criteria. Reference these variables in the APPROVE state.|NUMBER|
 @ACSSTATE|This variable stores the current run state of the ACS specfile. Reference this variable in any state.|CHARACTER|
 @ACSTHEIRRATE|The ACS program passes the interest rate of a loan you acquired from a credit report to the ACS specfile, assuming the reporting institution supplies it. Reference this variable in either the APPROVE or the FINISH states. This information is not always available.|RATE|
-@ACSWINDOWSFLAG|This variable is a true/false flag to specify if ACS is being run in Windows® and could be used to determine whether to run the SFW state or the SALESHISTORY state. Reference this variable in any state.|NUMBER|
+@ACSWINDOWSFLAG|This variable is a true/false flag to specify if ACS is being run in WindowsÂ® and could be used to determine whether to run the SFW state or the SALESHISTORY state. Reference this variable in any state.|NUMBER|
 @APPID|This variable identifies the Application record on which the specfile is running|Character|
 @APPQADDINFO1|These variables add up to three custom columns in the start box when in the application queue by assigning the desired fields to the variables|Character|
 @APPQADDINFO2|These variables add up to three custom columns in the start box when in the application queue by assigning the desired fields to the variables|Character|
@@ -274,9 +275,9 @@ LIVEINSTCHECK|Returns 1 if the specfile is running in a live SYM institution|NUM
 @CREDITREPORTFILENAME|0-3: Blank |CHARACTER|
 @CREDITREPORTFIRSTNAME|0: Blank ; 1: CREDREP:FIRSTNAME ; 2: NAME:FIRST ; 3: LOANAPP PERSON:FIRST |CHARACTER|
 @CREDITREPORTHAWKINDICATOR|0,2,3: Blank ; 1: CREDREP:HAWKINDICATOR |CHARACTER|
-@CREDITREPORTIDNUMBER|0: Blank ; 1: CREDREP:IDNUMBER ; 2,3: NAME:IDENTIDNUMBER:n where n is the subfield of the first NAME:IDENTIDNUMBER that has a corresponding ID Type of (2) Driver’s License, (3) State ID, or (6) Military ID. |CHARACTER|
+@CREDITREPORTIDNUMBER|0: Blank ; 1: CREDREP:IDNUMBER ; 2,3: NAME:IDENTIDNUMBER:n where n is the subfield of the first NAME:IDENTIDNUMBER that has a corresponding ID Type of (2) DriverÂ’s License, (3) State ID, or (6) Military ID. |CHARACTER|
 @CREDITREPORTIDNUMBER2|No info found|CHARACTER|
-@CREDITREPORTIDSTATE|0: Blank ; 1: CREDREP:IDSTATE ; 2,3: NAME:IDENTIDNUMBER:n where n is the subfield of the first NAME:IDENTIDNUMBER that has a corresponding ID Type of (2) Driver’s License, (3) State ID, or (6) Military ID. If IDENTIDDESCRIPTION is not||
+@CREDITREPORTIDSTATE|0: Blank ; 1: CREDREP:IDSTATE ; 2,3: NAME:IDENTIDNUMBER:n where n is the subfield of the first NAME:IDENTIDNUMBER that has a corresponding ID Type of (2) DriverÂ’s License, (3) State ID, or (6) Military ID. If IDENTIDDESCRIPTION is not||
 @CREDITREPORTIDSTATE2|No info found|CHARACTER|
 @CREDITREPORTIDVERIFICATIONOID|0,2,3: <Blank> 1: CREDREP:IDVERIFICATIONID  |Character   |
 @CREDITREPORTINCLUDEIDV|0,2,3: <Blank> 1: CREDREP:INCIDVERIFY  |Yes/No   |
@@ -568,7 +569,7 @@ LIVEINSTCHECK|Returns 1 if the specfile is running in a live SYM institution|NUM
 @EXCPITEMSLID|Corresponds to the EXCPITEM:ID field in the current exception item|CHARACTER|
 @EXCPITEMSLIDTYPE|Corresponds to the EXCPITEM:IDTYPE field in the current exception item|NUMBER|
 @EXCPITEMTOTALNSF|A special variable that indicates the total of the @EXCPITEMAMOUNT for each exception item processed thus far (in the current Exception Item Repeat FM session) that has the same @EXCPITEMACCOUNT, @EXCPITEMSLIDTYPE, and @EXCPITEMSLID as t||
-@EXCPITEMTYPE|This field can have the following values, based on the type of exception ; 0 - Draft Exception ; 1 - ACH Exception ; 2 - ATM™ Exception ; 3 - Credit/Debit Card Exception ; 4 - Fee Exception ; 5 - Insurance Exception ; 6 - Misc Post Exception||
+@EXCPITEMTYPE|This field can have the following values, based on the type of exception ; 0 - Draft Exception ; 1 - ACH Exception ; 2 - ATMÂ™ Exception ; 3 - Credit/Debit Card Exception ; 4 - Fee Exception ; 5 - Insurance Exception ; 6 - Misc Post Exception||
 @HBANSWERAMOUNT|Answer Amount|MONEY|
 @HBANSWERDATE|Answer Date|DATE|
 @HBANSWERNUM|Answer Number|NUMBER|
@@ -629,7 +630,6 @@ LIVEINSTCHECK|Returns 1 if the specfile is running in a live SYM institution|NUM
 @LOANPROJECTLOANDATE|Loan Date|DATE|
 @LOANPROJECTMATURITYDATE|Maturity Date|DATE|
 @LOANPROJECTPAYMENT|Payment Amount|MONEY|
-@LOANPROJECTPAYMENT|Payment Amount|MONEY|
 @LOANPROJECTPAYMENTCOUNT|Payment Count|NUMBER|
 @LOANPROJECTPAYMENTFREQUENCY|Payment Frequency|CODE|14
 @LOANPROJECTPAYMENTSKIPS|Payment Skip|CODE|9
@@ -665,7 +665,7 @@ LIVEINSTCHECK|Returns 1 if the specfile is running in a live SYM institution|NUM
 @MCWCHRDATA8|Character variable for Symitar internal use|CHARACTER|
 @MCWCHRDATA9|Character variable for Symitar internal use|CHARACTER|
 @MCWCHRDATA10|Character variable for Symitar internal use|CHARACTER|
-@MCWDATATYPE|A numeric variable with valid values of 0, 1, and 2. ; (0) indicates that the specfile has only one state. The specfile runs once, produces output, and is done. ; (1) indicates that the specfile has multiple states, and that the current state||
+@MCWDATATYPE|A numeric variable with valid values of 0, 1, and 2. ; (0) indicates that the specfile has only one state. The specfile runs once, produces output, and is done. ; (1) indicates that the specfile has multiple states, and that the current state requires some user input to advance to the next state. ; (2) indicates that the specfile has multiple states, and this is the final state.|CODE|2
 @MCWDATEDATA1|Date variable for Symitar internal use|DATE|
 @MCWDATEDATA2|Date variable for Symitar internal use|DATE|
 @MCWDATEDATA3|Date variable for Symitar internal use|DATE|
@@ -692,14 +692,14 @@ LIVEINSTCHECK|Returns 1 if the specfile is running in a live SYM institution|NUM
 @MCWNUMDATA8|Number variable for Symitar internal use|NUMBER|
 @MCWNUMDATA9|Number variable for Symitar internal use|NUMBER|
 @MCWNUMDATA10|Number variable for Symitar internal use|NUMBER|
-@MCWPREFLOCATOR|you access items in the Preference record, such as a member's preferred language, thereby allowing a script author to match the language used elsewhere in NTMC. This enables you to easily determine language preferences and access rights in||
+@MCWPREFLOCATOR|you access items in the Preference record, such as a member's preferred language, thereby allowing a script author to match the language used elsewhere in NTMC. This enables you to easily determine language preferences and access rights in custom scripts.|NUMBER|
 @MCWRATEDATA1|Rate variable for Symitar internal use|RATE|
 @MCWRATEDATA2|Rate variable for Symitar internal use|RATE|
 @MCWRATEDATA3|Rate variable for Symitar internal use|RATE|
 @MCWRATEDATA4|Rate variable for Symitar internal use|RATE|
 @MCWRATEDATA5|Rate variable for Symitar internal use|RATE|
 @MCWSESSIONNUMBER|A numeric variable passed into the specfile each time the specfile is invoked through the MemberConnect program. It contains a number from 1 to 100. This allows up to 100 concurrent users to run an interactive specfile.|NUMBER|
-@MCWSTATE|An alphanumeric variable used to control program flow within the Report Generator PRINT section. Valid values are any alphanumeric text string up to 20 characters in length. The initial state passed into the PRINT section when the specfile is in||
+@MCWSTATE|An alphanumeric variable used to control program flow within the Report Generator PRINT section. Valid values are any alphanumeric text string up to 20 characters in length. The initial state passed into the PRINT section when the specfile is invoked through MemberConnect must be START. The final @MCWSTATE must be set to END to enable the specfile to terminate properly.|CHARACTER|
 @MCWUSERAMOUNT1|Money variable used to pass information to and from, within an MCW Specfile|MONEY|
 @MCWUSERAMOUNT2|Money variable used to pass information to and from, within an MCW Specfile|MONEY|
 @MCWUSERAMOUNT3|Money variable used to pass information to and from, within an MCW Specfile|MONEY|
@@ -896,7 +896,7 @@ LIVEINSTCHECK|Returns 1 if the specfile is running in a live SYM institution|NUM
 @RGANSNUM|This variables pass the answer back before the next step of the specfile is executed|NUMBER|
 @RGANSRATE|This variables pass the answer back before the next step of the specfile is executed|RATE|
 @RGANSTEXT|This variables pass the answer back before the next step of the specfile is executed|CHARACTER|
-@RGDATATYPE|This variable specifies the data type requested or the completion of the last step of the specfile ; 0 = no input required ; 1 = character ; 2 = rate ; 3 = date ; 4 = number ; 5 = code ; 6 = money to $999,999,999,999.99 ; 7 = money to 16 digit||
+@RGDATATYPE|This variable specifies the data type requested or the completion of the last step of the specfile ; 0 = no input required ; 1 = character ; 2 = rate ; 3 = date ; 4 = number ; 5 = code ; 6 = money to $999,999,999,999.99 ; 7 = money to 16 digits ; 8 = yes/no ; 9 = end Report Generator specfile |NUMBER|
 @RGDEFAMOUNT|This variables is used to pass information, a prompt, and a default value|MONEY|
 @RGDEFDATE|This variables is used to pass information, a prompt, and a default value|DATE|
 @RGDEFNUM|This variables is used to pass information, a prompt, and a default value|NUMBER|
@@ -950,5 +950,7 @@ LIVEINSTCHECK|Returns 1 if the specfile is running in a live SYM institution|NUM
 @VALIDATESPHOLDTYPE|Stop Payment Hold Type [SP TRANSACTION]|NUMBER|
 @VALIDATESUBFIELD|Subfield of current field|NUMBER|
 @VALIDATETCPRODUCT|Travelers check product code [TC TRANSACTION]|NUMBER|
+@VALIDATETRANCODE|Teller Transaction trancode entered by the user|CHARACTER|2
 @VALIDATETRANCODESTATE|(0) Before ; (1) At ; (2) After [except for SP, SC, MP and FE codes]|CHARACTER|2
 @VALIDATEWDAMOUNT|Withdraw amount requested [certificate penalty only]|MONEY|
+@VALIDATEYESNOINPUT|Answer to a Yes/No prompt|Boolean|
